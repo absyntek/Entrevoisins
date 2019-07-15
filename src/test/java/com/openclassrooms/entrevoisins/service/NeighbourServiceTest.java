@@ -11,6 +11,7 @@ import org.junit.runners.JUnit4;
 
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 
@@ -21,6 +22,7 @@ import static org.junit.Assert.assertThat;
 public class NeighbourServiceTest {
 
     private NeighbourApiService service;
+    private Neighbour mNeighbour;
 
     @Before
     public void setup() {
@@ -39,5 +41,12 @@ public class NeighbourServiceTest {
         Neighbour neighbourToDelete = service.getNeighbours().get(0);
         service.deleteNeighbour(neighbourToDelete);
         assertFalse(service.getNeighbours().contains(neighbourToDelete));
+    }
+
+    @Test
+    public void getNeighbourBydTest (){
+        mNeighbour = service.getNeighbours().get(1);
+        int neighbourId = mNeighbour.getId();
+        assertEquals(mNeighbour,service.findNeighbourByID(neighbourId));
     }
 }

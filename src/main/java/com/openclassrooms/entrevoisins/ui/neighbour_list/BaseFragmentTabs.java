@@ -1,10 +1,9 @@
 package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -25,13 +24,13 @@ import org.greenrobot.eventbus.Subscribe;
 
 import java.util.List;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public abstract class BaseFragmentTabs extends Fragment {
 
     protected NeighbourApiService mApiService;
     protected FavoriteApiService mFavoriteApiService;
-    protected List<Neighbour> mNeighboursFav;
     protected List<Neighbour> mNeighbours;
     protected RecyclerView mRecyclerView;
 

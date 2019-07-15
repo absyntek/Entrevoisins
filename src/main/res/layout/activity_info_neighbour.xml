@@ -44,6 +44,7 @@
 
     <include
 
+        android:id="@+id/include"
         layout="@layout/content_info_neighbour" />
 
     <android.support.design.widget.FloatingActionButton
@@ -53,8 +54,8 @@
         android:layout_margin="@dimen/fab_margin"
         android:backgroundTint="@android:color/background_light"
         app:backgroundTint="@android:color/background_light"
-        app:layout_anchor="@id/app_bar"
-        app:layout_anchorGravity="bottom|end"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="end|top"
         app:srcCompat="@drawable/ic_star_border_24dp" />
 
 </android.support.design.widget.CoordinatorLayout>

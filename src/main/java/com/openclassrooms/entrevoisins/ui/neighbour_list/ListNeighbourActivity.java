@@ -4,9 +4,12 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import com.openclassrooms.entrevoisins.R;
+import com.openclassrooms.entrevoisins.di.DI;
+import com.openclassrooms.entrevoisins.service.FavoriteApiService;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
