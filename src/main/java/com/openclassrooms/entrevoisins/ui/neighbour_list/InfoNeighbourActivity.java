@@ -92,11 +92,11 @@ public class InfoNeighbourActivity extends AppCompatActivity {
 
     private void changeStatuFavorite (boolean addOrRemove){
         if (addOrRemove){
-            fab.setImageResource(R.drawable.ic_star_24dp); //TODO ask error no work fab
+            fab.setImageResource(R.drawable.ic_star_24dp);
             mFavoriteApiService.addFavoritNeighbour(this.neighbour.getId());
 
         }else {
-            fab.setImageResource(R.drawable.ic_star_border_24dp); //TODO ask error no work fab
+            fab.setImageResource(R.drawable.ic_star_border_24dp);
             mFavoriteApiService.deleteFavoritNeighbour(this.neighbour.getId());
         }
     }
