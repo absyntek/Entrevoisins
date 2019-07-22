@@ -11,7 +11,7 @@ public interface FavoriteApiService {
     List<Integer> getFavoritNeighbours();
 
     /**
-     *
+     * Add a neighbour ID to the favorite list
      * @param neighbourID
      */
     void addFavoritNeighbour(int neighbourID);

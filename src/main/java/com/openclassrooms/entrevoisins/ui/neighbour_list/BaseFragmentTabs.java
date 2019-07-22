@@ -3,7 +3,6 @@ package com.openclassrooms.entrevoisins.ui.neighbour_list;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -24,7 +23,6 @@ import org.greenrobot.eventbus.Subscribe;
 
 import java.util.List;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public abstract class BaseFragmentTabs extends Fragment {
@@ -49,7 +47,7 @@ public abstract class BaseFragmentTabs extends Fragment {
         View view = inflater .inflate(R.layout.fragment_neighbour_list, container, false);
         mRecyclerView = (RecyclerView) view;
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL)); //add vertical line beetwin View Holders
         ButterKnife.bind(this, view);
         initList();
         return (view);
@@ -58,6 +56,10 @@ public abstract class BaseFragmentTabs extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+    }
+
+    protected void refreshView() {
+        mRecyclerView.getAdapter().notifyDataSetChanged();
     }
 
     @Override

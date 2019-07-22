@@ -3,9 +3,6 @@ package com.openclassrooms.entrevoisins.ui.neighbour_list;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v7.widget.RecyclerView;
-
-import com.openclassrooms.entrevoisins.R;
 
 
 public class ListNeighbourPagerAdapter extends FragmentPagerAdapter {

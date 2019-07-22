@@ -30,6 +30,8 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         mNeighbours = items;
     }
 
+
+    //instanciation du ViewHolder à partir de la vue xml
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
@@ -38,6 +40,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         return new ViewHolder(view);
     }
 
+    //binding entre la donnée récupérée et le contenu
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         Neighbour neighbour = mNeighbours.get(position);
@@ -64,11 +67,14 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         });
     }
 
+    //return number of neighbour to show
     @Override
     public int getItemCount() {
         return mNeighbours.size();
     }
 
+
+    //find item in layout
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.item_list_avatar)
