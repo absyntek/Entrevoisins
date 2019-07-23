@@ -64,8 +64,8 @@ public class InfoNeighbourActivity extends AppCompatActivity {
                 mtvNeighbourName.setText(neighbour.getName());
                 Glide.with(this).load(neighbour.getAvatarUrl()).into(mImageViewProfil);
 
-                if (isFavorite()){ fab.setImageResource(R.drawable.ic_star_24dp); }
-                else{fab.setImageResource(R.drawable.ic_star_border_24dp);}
+                if (isFavorite()){ changeFabColor(true); }
+                else{ changeFabColor(false); }
             }
         }
 
@@ -90,13 +90,21 @@ public class InfoNeighbourActivity extends AppCompatActivity {
         return mFavoriteApiService.getFavoritNeighbours().contains(neighbour.getId());
     }
 
+    private void changeFabColor (boolean isFav){
+        if (isFav){
+            fab.setImageResource(R.drawable.ic_star_24dp);
+        }else {
+            fab.setImageResource(R.drawable.ic_star_border_24dp);
+        }
+    }
+
     private void changeStatuFavorite (boolean addOrRemove){
         if (addOrRemove){
-            fab.setImageResource(R.drawable.ic_star_24dp);
+            changeFabColor(true);
             mFavoriteApiService.addFavoritNeighbour(this.neighbour.getId());
 
         }else {
-            fab.setImageResource(R.drawable.ic_star_border_24dp);
+            changeFabColor(false);
             mFavoriteApiService.deleteFavoritNeighbour(this.neighbour.getId());
         }
     }
