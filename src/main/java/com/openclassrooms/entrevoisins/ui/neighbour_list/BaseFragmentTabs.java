@@ -32,24 +32,24 @@ public abstract class BaseFragmentTabs extends Fragment {
     protected List<Neighbour> mNeighbours;
     protected RecyclerView mRecyclerView;
 
-    protected abstract void initList();
+    protected abstract void initList();     // Take and give the List of Neighbour or Fav to ViewAdapter
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mApiService = DI.getNeighbourApiService();
-        mFavoriteApiService = DI.getServiceFav();
+        mApiService = DI.getNeighbourApiService();  //Inject API
+        mFavoriteApiService = DI.getServiceFav();   //Inject API
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater .inflate(R.layout.fragment_neighbour_list, container, false);
-        mRecyclerView = (RecyclerView) view;
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL)); //add vertical line beetwin View Holders
+        mRecyclerView = (RecyclerView) view;    //Attach RecyclerView to view (layout)
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));  //Set LinearLayout to RecyclerView
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL)); //set vertical line beetwin View Holders
         ButterKnife.bind(this, view);
-        initList();
+        initList();     //Set ViewHolder
         return (view);
     }
 
