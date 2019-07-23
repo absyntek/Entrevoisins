@@ -32,8 +32,8 @@ public class ListNeighbourActivity extends AppCompatActivity{
 
         setSupportActionBar(mToolbar);
         mPagerAdapter = new ListNeighbourPagerAdapter(getSupportFragmentManager());                     // New instance of mPagerAdapter wich extend FragmentPagerAdapter
-        mViewPager.setAdapter(mPagerAdapter);                                                           // Set Up View pager for reicive frag by mPagerAdapter
-        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));    // send int to mViewPager and SetUp the frag to show
-        mTabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));  // Show frag in new ViewPager
+        mViewPager.setAdapter(mPagerAdapter);                                                           // attach mPagerAdapter to mViewPager
+        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));    // attach listner onPageChange to adapter
+        mTabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));  // attach listner onTabselect wich contain Adapter
     }
 }
